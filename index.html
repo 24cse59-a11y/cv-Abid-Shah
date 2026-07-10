@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Abid Shah – Library Professional & Information Specialist</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet"/>
+<link href="https://googleapis.com" rel="stylesheet"/>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -220,236 +220,48 @@
   }
   .contact-card {
     background: var(--surface); border: 1px solid var(--border);
-    border-radius: 10px; padding: 1.3rem 1.5rem;
-    display: flex; align-items: center; gap: 1rem;
-    text-decoration: none; transition: border-color 0.25s, transform 0.2s;
+    border-radius: 10px; padding: 1.5rem; text-align: center;
+    transition: border-color 0.2s; text-decoration: none; display: block;
   }
-  .contact-card:hover { border-color: var(--accent); transform: translateY(-2px); }
-  .contact-icon {
-    width: 42px; height: 42px; border-radius: 8px;
-    background: rgba(110,231,183,0.08); border: 1px solid rgba(110,231,183,0.18);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.2rem; flex-shrink: 0;
-  }
-  .contact-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
-  .contact-value { font-size: 13px; color: var(--text); word-break: break-all; }
+  .contact-card:hover { border-color: var(--accent); }
+  .contact-icon { font-size: 1.8rem; margin-bottom: 0.5rem; display: block; }
+  .contact-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+  .contact-value { font-family: var(--font-head); font-size: 1rem; color: var(--text); font-weight: 600; margin-top: 2px; }
 
   /* ── FOOTER ── */
   footer {
-    border-top: 1px solid var(--border); padding: 2rem 2.5rem;
-    text-align: center; color: var(--muted); font-size: 12px;
+    max-width: 900px; margin: 0 auto; padding: 3rem 2.5rem;
+    border-top: 1px solid var(--border); text-align: center;
+    font-size: 11px; color: var(--muted); letter-spacing: 0.05em;
   }
-  footer span { color: var(--accent); }
-
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  .hero-tag     { animation: fadeUp 0.5s ease both; }
-  .hero-name    { animation: fadeUp 0.6s 0.1s ease both; }
-  .hero-role    { animation: fadeUp 0.6s 0.2s ease both; }
-  .hero-bio     { animation: fadeUp 0.6s 0.3s ease both; }
-  .hero-cta     { animation: fadeUp 0.6s 0.4s ease both; }
-  .hero-photo-wrap { animation: fadeUp 0.7s 0.2s ease both; }
 
   @media (max-width: 768px) {
-    nav { padding: 0.85rem 1.5rem; }
-    .nav-links { gap: 1rem; }
-    section { padding: 3rem 1.5rem; }
-    .hero-inner { gap: 2rem; }
-    .hero-name { font-size: 2rem; }
+    nav { padding: 1rem 1.5rem; flex-direction: column; gap: 1rem; }
+    .hero { padding: 4rem 1.5rem 3rem; }
+    .hero-inner { gap: 2rem; justify-content: center; text-align: center; }
+    .hero-bio { margin-left: auto; margin-right: auto; }
+    .hero-cta { justify-content: center; }
+    section { padding: 4rem 1.5rem; }
   }
 </style>
 </head>
 <body>
 
-<nav>
-  <a class="nav-logo" href="#">AS.</a>
-  <ul class="nav-links">
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+  <nav>
+    <a href="#" class="nav-logo">ABID SHAH</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-<div class="hero">
-  <div class="hero-glow1"></div>
-  <div class="hero-glow2"></div>
-  <div class="hero-inner">
-    <div class="hero-text">
-      <div class="hero-tag">Library Information Specialist</div>
-      <h1 class="hero-name">Abid <span>Shah</span></h1>
-      <p class="hero-role">MLIS Graduate & Library Professional</p>
-      <p class="hero-bio">
-        Passionate Library and Information Science professional with Master's degree from University of Balochistan. 
-        Experienced in library management, information organization, and dedicated to providing excellent library services 
-        and supporting educational missions.
-      </p>
-      <div class="hero-cta">
-        <a href="#contact" class="btn-primary">Get in touch</a>
-        <a href="#education" class="btn-ghost">My journey</a>
-      </div>
-    </div>
-
-    <div class="hero-photo-wrap">
-      <img class="hero-photo" src="data:image/jpeg;base64,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" alt="Abid Shah" />
-    </div>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<section id="skills">
-  <p class="section-label">What I know</p>
-  <h2 class="section-title">Skills</h2>
-  <div class="skills-grid">
-    <div class="skill-card">
-      <span class="skill-icon">📚</span>
-      <div class="skill-name">Library Management</div>
-      <div class="skill-sub">Operations & Services</div>
-    </div>
-    <div class="skill-card">
-      <span class="skill-icon">🔍</span>
-      <div class="skill-name">Information Organization</div>
-      <div class="skill-sub">Cataloging & Classification</div>
-    </div>
-    <div class="skill-card">
-      <span class="skill-icon">📊</span>
-      <div class="skill-name">MS Office</div>
-      <div class="skill-sub">Word · Excel · PowerPoint</div>
-    </div>
-    <div class="skill-card">
-      <span class="skill-icon">💬</span>
-      <div class="skill-name">Communication</div>
-      <div class="skill-sub">Client & Research Support</div>
-    </div>
-    <div class="skill-card">
-      <span class="skill-icon">🌍</span>
-      <div class="skill-name">Languages</div>
-      <div class="skill-sub">Urdu, English, Balochi, Pashto</div>
-    </div>
-    <div class="skill-card">
-      <span class="skill-icon">📖</span>
-      <div class="skill-name">Research Support</div>
-      <div class="skill-sub">Information Literacy</div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<section id="experience">
-  <p class="section-label">Professional background</p>
-  <h2 class="section-title">Experience</h2>
-
-  <div class="exp-card">
-    <div class="exp-year">6 Months</div>
-    <div class="exp-title">Library Assistant</div>
-    <div class="exp-organization">Khuzdar University Library, Khuzdar</div>
-    <div class="exp-detail">
-      Assisted in daily library operations including cataloging, resource management, and patron services. 
-      Supported library staff in maintaining and organizing library resources to enhance accessibility and user experience.
-    </div>
-  </div>
-
-</section>
-
-<div class="divider"></div>
-
-<section id="education">
-  <p class="section-label">Academic background</p>
-  <h2 class="section-title">Education</h2>
-  <div class="timeline">
-
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="edu-card">
-        <div class="edu-year">2017</div>
-        <div class="edu-institution">Master of Library Information Science (MLIS)</div>
-        <div class="edu-detail">University of Balochistan, Quetta · Marks: 665/1350</div>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="edu-card">
-        <div class="edu-year">2014</div>
-        <div class="edu-institution">Bachelor of Science (BSC)</div>
-        <div class="edu-detail">University of Balochistan, Quetta · Marks: 438/800</div>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="edu-card">
-        <div class="edu-year">2012</div>
-        <div class="edu-institution">FSC (Pre-Engineering)</div>
-        <div class="edu-detail">Baluchistan Board, Quetta · Marks: 489/1100</div>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="edu-card">
-        <div class="edu-year">2010</div>
-        <div class="edu-institution">Matric (Science)</div>
-        <div class="edu-detail">Baluchistan Board, Quetta · Marks: 534/1050</div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<section id="interests">
-  <p class="section-label">Beyond the desk</p>
-  <h2 class="section-title">Interests</h2>
-  <div class="interest-grid">
-    <div class="interest-tag"><span class="interest-icon">📖</span> Reading</div>
-    <div class="interest-tag"><span class="interest-icon">🔬</span> Research</div>
-    <div class="interest-tag"><span class="interest-icon">🌍</span> Cultural Studies</div>
-    <div class="interest-tag"><span class="interest-icon">📚</span> Knowledge Management</div>
-    <div class="interest-tag"><span class="interest-icon">🎓</span> Education</div>
-    <div class="interest-tag"><span class="interest-icon">💻</span> Information Technology</div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<section id="contact">
-  <p class="section-label">Let's connect</p>
-  <h2 class="section-title">Contact</h2>
-  <div class="contact-grid">
-    <a href="mailto:abidmushwani401@gmail.com" class="contact-card">
-      <div class="contact-icon">✉️</div>
-      <div>
-        <div class="contact-label">Email</div>
-        <div class="contact-value">abidmushwani401@gmail.com</div>
-      </div>
-    </a>
-    <div class="contact-card" style="cursor:default;">
-      <div class="contact-icon">📱</div>
-      <div>
-        <div class="contact-label">Phone</div>
-        <div class="contact-value">0334-8881696</div>
-      </div>
-    </div>
-    <div class="contact-card" style="cursor:default;">
-      <div class="contact-icon">📍</div>
-      <div>
-        <div class="contact-label">Location</div>
-        <div class="contact-value">Quetta, Balochistan, Pakistan</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  Designed &amp; built by <span>Abid Shah</span> · 2026
-</footer>
-
-</body>
-</html>
+  <main>
+    <section class="hero" id="about">
+      <div class="hero-glow1"></div>
+      <div class="hero-glow2"></div>
+      <div class="hero-inner">
+        <div class="hero-text">
+          <span class="hero-tag">Portfolio</span>
