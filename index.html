@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Abid Shah – Library Professional & Information Specialist</title>
-<link href="https://googleapis.com" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet"/>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -220,48 +220,236 @@
   }
   .contact-card {
     background: var(--surface); border: 1px solid var(--border);
-    border-radius: 10px; padding: 1.5rem; text-align: center;
-    transition: border-color 0.2s; text-decoration: none; display: block;
+    border-radius: 10px; padding: 1.3rem 1.5rem;
+    display: flex; align-items: center; gap: 1rem;
+    text-decoration: none; transition: border-color 0.25s, transform 0.2s;
   }
-  .contact-card:hover { border-color: var(--accent); }
-  .contact-icon { font-size: 1.8rem; margin-bottom: 0.5rem; display: block; }
-  .contact-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
-  .contact-value { font-family: var(--font-head); font-size: 1rem; color: var(--text); font-weight: 600; margin-top: 2px; }
+  .contact-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .contact-icon {
+    width: 42px; height: 42px; border-radius: 8px;
+    background: rgba(110,231,183,0.08); border: 1px solid rgba(110,231,183,0.18);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem; flex-shrink: 0;
+  }
+  .contact-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+  .contact-value { font-size: 13px; color: var(--text); word-break: break-all; }
 
   /* ── FOOTER ── */
   footer {
-    max-width: 900px; margin: 0 auto; padding: 3rem 2.5rem;
-    border-top: 1px solid var(--border); text-align: center;
-    font-size: 11px; color: var(--muted); letter-spacing: 0.05em;
+    border-top: 1px solid var(--border); padding: 2rem 2.5rem;
+    text-align: center; color: var(--muted); font-size: 12px;
   }
+  footer span { color: var(--accent); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-tag     { animation: fadeUp 0.5s ease both; }
+  .hero-name    { animation: fadeUp 0.6s 0.1s ease both; }
+  .hero-role    { animation: fadeUp 0.6s 0.2s ease both; }
+  .hero-bio     { animation: fadeUp 0.6s 0.3s ease both; }
+  .hero-cta     { animation: fadeUp 0.6s 0.4s ease both; }
+  .hero-photo-wrap { animation: fadeUp 0.7s 0.2s ease both; }
 
   @media (max-width: 768px) {
-    nav { padding: 1rem 1.5rem; flex-direction: column; gap: 1rem; }
-    .hero { padding: 4rem 1.5rem 3rem; }
-    .hero-inner { gap: 2rem; justify-content: center; text-align: center; }
-    .hero-bio { margin-left: auto; margin-right: auto; }
-    .hero-cta { justify-content: center; }
-    section { padding: 4rem 1.5rem; }
+    nav { padding: 0.85rem 1.5rem; }
+    .nav-links { gap: 1rem; }
+    section { padding: 3rem 1.5rem; }
+    .hero-inner { gap: 2rem; }
+    .hero-name { font-size: 2rem; }
   }
 </style>
 </head>
 <body>
 
-  <nav>
-    <a href="#" class="nav-logo">ABID SHAH</a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<nav>
+  <a class="nav-logo" href="#">AS.</a>
+  <ul class="nav-links">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-  <main>
-    <section class="hero" id="about">
-      <div class="hero-glow1"></div>
-      <div class="hero-glow2"></div>
-      <div class="hero-inner">
-        <div class="hero-text">
-          <span class="hero-tag">Portfolio</span>
+<div class="hero">
+  <div class="hero-glow1"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-tag">Library Information Specialist</div>
+      <h1 class="hero-name">Abid <span>Shah</span></h1>
+      <p class="hero-role">MLIS Graduate & Library Professional</p>
+      <p class="hero-bio">
+        Passionate Library and Information Science professional with Master's degree from University of Balochistan. 
+        Experienced in library management, information organization, and dedicated to providing excellent library services 
+        and supporting educational missions.
+      </p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn-primary">Get in touch</a>
+        <a href="#education" class="btn-ghost">My journey</a>
+      </div>
+    </div>
+
+    <div class="hero-photo-wrap">
+      <img class="hero-photo" src="qwer.jpeg" alt="Abid Shah" />
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<section id="skills">
+  <p class="section-label">What I know</p>
+  <h2 class="section-title">Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <span class="skill-icon">📚</span>
+      <div class="skill-name">Library Management</div>
+      <div class="skill-sub">Operations & Services</div>
+    </div>
+    <div class="skill-card">
+      <span class="skill-icon">🔍</span>
+      <div class="skill-name">Information Organization</div>
+      <div class="skill-sub">Cataloging & Classification</div>
+    </div>
+    <div class="skill-card">
+      <span class="skill-icon">📊</span>
+      <div class="skill-name">MS Office</div>
+      <div class="skill-sub">Word · Excel · PowerPoint</div>
+    </div>
+    <div class="skill-card">
+      <span class="skill-icon">💬</span>
+      <div class="skill-name">Communication</div>
+      <div class="skill-sub">Client & Research Support</div>
+    </div>
+    <div class="skill-card">
+      <span class="skill-icon">🌍</span>
+      <div class="skill-name">Languages</div>
+      <div class="skill-sub">Urdu, English, Balochi, Pashto</div>
+    </div>
+    <div class="skill-card">
+      <span class="skill-icon">📖</span>
+      <div class="skill-name">Research Support</div>
+      <div class="skill-sub">Information Literacy</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="experience">
+  <p class="section-label">Professional background</p>
+  <h2 class="section-title">Experience</h2>
+
+  <div class="exp-card">
+    <div class="exp-year">6 Months</div>
+    <div class="exp-title">Library Assistant</div>
+    <div class="exp-organization">Khuzdar University Library, Khuzdar</div>
+    <div class="exp-detail">
+      Assisted in daily library operations including cataloging, resource management, and patron services. 
+      Supported library staff in maintaining and organizing library resources to enhance accessibility and user experience.
+    </div>
+  </div>
+
+</section>
+
+<div class="divider"></div>
+
+<section id="education">
+  <p class="section-label">Academic background</p>
+  <h2 class="section-title">Education</h2>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="edu-card">
+        <div class="edu-year">2017</div>
+        <div class="edu-institution">Master of Library Information Science (MLIS)</div>
+        <div class="edu-detail">University of Balochistan, Quetta · Marks: 665/1350</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="edu-card">
+        <div class="edu-year">2014</div>
+        <div class="edu-institution">Bachelor of Science (BSC)</div>
+        <div class="edu-detail">University of Balochistan, Quetta · Marks: 438/800</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="edu-card">
+        <div class="edu-year">2012</div>
+        <div class="edu-institution">FSC (Pre-Engineering)</div>
+        <div class="edu-detail">Baluchistan Board, Quetta · Marks: 489/1100</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="edu-card">
+        <div class="edu-year">2010</div>
+        <div class="edu-institution">Matric (Science)</div>
+        <div class="edu-detail">Baluchistan Board, Quetta · Marks: 534/1050</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="interests">
+  <p class="section-label">Beyond the desk</p>
+  <h2 class="section-title">Interests</h2>
+  <div class="interest-grid">
+    <div class="interest-tag"><span class="interest-icon">📖</span> Reading</div>
+    <div class="interest-tag"><span class="interest-icon">🔬</span> Research</div>
+    <div class="interest-tag"><span class="interest-icon">🌍</span> Cultural Studies</div>
+    <div class="interest-tag"><span class="interest-icon">📚</span> Knowledge Management</div>
+    <div class="interest-tag"><span class="interest-icon">🎓</span> Education</div>
+    <div class="interest-tag"><span class="interest-icon">💻</span> Information Technology</div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="contact">
+  <p class="section-label">Let's connect</p>
+  <h2 class="section-title">Contact</h2>
+  <div class="contact-grid">
+    <a href="mailto:abidmushwani401@gmail.com" class="contact-card">
+      <div class="contact-icon">✉️</div>
+      <div>
+        <div class="contact-label">Email</div>
+        <div class="contact-value">abidmushwani401@gmail.com</div>
+      </div>
+    </a>
+    <div class="contact-card" style="cursor:default;">
+      <div class="contact-icon">📱</div>
+      <div>
+        <div class="contact-label">Phone</div>
+        <div class="contact-value">0334-8881696</div>
+      </div>
+    </div>
+    <div class="contact-card" style="cursor:default;">
+      <div class="contact-icon">📍</div>
+      <div>
+        <div class="contact-label">Location</div>
+        <div class="contact-value">Quetta, Balochistan, Pakistan</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Designed &amp; built by <span>Abid Shah</span> · 2026
+</footer>
+
+</body>
+</html>
